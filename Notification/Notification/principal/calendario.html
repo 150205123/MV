@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exportación del Mes</title>
+    <link rel="stylesheet" href="calendario.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h1 class="title">CALENDARIO 2025</h1>
+        <div class="months">
+            <button onclick="loadDays('Enero')">Enero</button>
+            <button onclick="loadDays('Febrero')">Febrero</button>
+            <button onclick="loadDays('Marzo')">Marzo</button>
+            <button onclick="loadDays('Abril')">Abril</button>
+            <button onclick="loadDays('Mayo')">Mayo</button>
+            <button onclick="loadDays('Junio')">Junio</button>
+            <button onclick="loadDays('Julio')">Julio</button>
+            <button onclick="loadDays('Agosto')">Agosto</button>
+            <button onclick="loadDays('Septiembre')">Septiembre</button>
+            <button onclick="loadDays('Octubre')">Octubre</button>
+            <button onclick="loadDays('Noviembre')">Noviembre</button>
+            <button onclick="loadDays('Diciembre')">Diciembre</button>
+        </div>
+        <div id="days" class="days"></div>
+        <div class="button-container">
+            <button id="saveButton" class="save-btn" style="display:none;" onclick="saveData()">Guardar Todo</button>
+            <button id="backButton" class="back-btn" style="display:none;" onclick="goBack()">Retroceder</button>
+        </div>
+    </div>
+    <a href="1.html" class="ingresar-btn">Regresar</a>
+    <script src="calendario.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notificación de Registro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reporte.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 style="color:red">Reporte Total</h1>
+    <div class="form-container">
+      <form id="formularioRegistro">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="numero">NUMERO:</label>
+            <input type="number" id="numero" required placeholder="Ingresa el número">
+          </div>
+          <div class="form-group">
+            <label for="area">AREA:</label>
+            <select id="area" required>
+              <option value="CALIDAD" selected>CALIDAD</option>
+              <option value="MANTENIMIENTO">MANTENIMIENTO</option>
+              <option value="TOPICO">TOPICO</option>
+              <option value="ADMINISTRACION">ADMINISTRACION</option>
+              <option value="AMP">AMP</option>
+              <option value="LABORATORIO">LABORATORIO</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="descripcion">DESCRIPCION:</label>
+            <input type="text" id="descripcion" required placeholder="Ingresa la descripción">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="proveedor">PROVEEDOR:</label>
+            <input type="text" id="proveedor" required placeholder="Ingresa el proveedor">
+          </div>
+          <div class="form-group">
+            <label for="responsable">RESPONSABLE:</label>
+            <select id="responsable" required>
+              <option value="PERLA SOTELO" selected>PERLA SOTELO</option>
+              <option value="JUAN CARLOS ALMEYDA">JUAN CARLOS ALMEYDA</option>
+              <option value="PRISCILA VALENCIA">PRISCILA VALENCIA</option>
+              <option value="ISMAEL RIVAS">ISMAEL RIVAS</option>
+              <option value="DANIEL ROJAS">DANIEL ROJAS</option>
+              <option value="DEYANIRA TORRES">DEYANIRA TORRES</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fechaVencimiento">FECHA DE VENCIMIENTO:</label>
+            <input type="date" id="fechaVencimiento" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" style="grid-column: span 3;">
+            <label for="observacion">OBSERVACION:</label>
+            <textarea id="observacion" required placeholder="Ingresa una observación"></textarea>
+          </div>
+        </div>
+
+        <div class="form-buttons">
+          <button type="button" onclick="agregarRegistro()">AGREGAR REGISTRO</button>
+          <button type="button" onclick="culminarRegistro()">CULMINAR</button>
+          <button type="button" onclick="imprimirTabla()">IMPRIMIR</button>
+          <button type="button" onclick="exportarExcel()">ARCHIVO EXCEL</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="filters-container">
+      <h3>Filtrar por Responsable</h3>
+      <label>
+        <input type="checkbox" id="filterPerla" onclick="filtrarRegistros()"> PERLA SOTELO
+      </label>
+      <label>
+        <input type="checkbox" id="filterAndres" onclick="filtrarRegistros()"> JUAN CARLOS ALMEYDA
+      </label>
+      <label>
+        <input type="checkbox" id="filterMaria" onclick="filtrarRegistros()"> PRISCILA VALENCIA
+      </label>
+      <label>
+        <input type="checkbox" id="filterIsmael" onclick="filtrarRegistros()"> ISMAEL RIVAS
+      </label>
+      <label>
+        <input type="checkbox" id="filterDaniel" onclick="filtrarRegistros()"> DANIEL ROJAS
+      </label>
+      <label>
+        <input type="checkbox" id="filterDeyanira" onclick="filtrarRegistros()"> DEYANIRA TORRES
+      </label>
+    </div>
+
+    <div class="table-container">
+      <h2 style="color:mediumblue">Registros Ingresados</h2>
+      <table id="tablaRegistros">
+        <thead>
+          <tr>
+            <th>Número</th>
+            <th>Área</th>
+            <th>Descripción</th>
+            <th>Proveedor</th>
+            <th>Responsable</th>
+            <th>Fecha de Vencimiento</th>
+            <th>Observación</th>
+            <th>Días</th>
+            <th>Indicación</th>
+            <th>Proceso</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="reporte.js"></script>
+</body>
+</html>

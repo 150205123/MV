@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notificación de Registro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="daniel.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <b><h1 style="color:mediumblue">Registro de Notificaciones de AMP</h1></b>
+
+    <!-- Formulario -->
+    <div class="form-container">
+      <form id="formularioRegistro">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="numero">NUMERO:</label>
+            <input type="number" id="numero" required placeholder="Ingresa el número">
+          </div>
+          <div class="form-group">
+            <label for="area">AREA:</label>
+            <select id="area" required>
+              <option value="AMP" selected>AMP</option> 
+              <option value="CALIDAD">CALIDAD</option>
+              <option value="TOPICO">TOPICO</option>
+              <option value="MANTENIMIENTO">MANTENIMIENTO</option>
+              <option value="ADMINISTRACION">ADMINISTRACION</option>
+              <option value="LABORATORIO">LABORATORIO</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="descripcion">DESCRIPCION:</label>
+            <input type="text" id="descripcion" required placeholder="Ingresa la descripción">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="proveedor">PROVEEDOR:</label>
+            <input type="text" id="proveedor" required placeholder="Ingresa el proveedor">
+          </div>
+          <div class="form-group">
+            <label for="responsable">RESPONSABLE:</label>
+            <select id="responsable" required>
+              <option value="DANIEL ROJAS" selected>DANIEL ROJAS</option> 
+              <option value="PERLA SOTELO">PERLA SOTELO</option>
+              <option value="MARIA HERRERA">MARIA HERRERA</option>
+              <option value="ISMAEL RIVAS">ISMAEL RIVAS</option>
+              <option value="ANDRES MARTINEZ">ANDRES MARTINEZ</option>
+              <option value="DEYANIRA TORRES">DEYANIRA TORRES</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fechaVencimiento">FECHA DE VENCIMIENTO:</label>
+            <input type="date" id="fechaVencimiento" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" style="grid-column: span 3;">
+            <label for="observacion">OBSERVACION:</label>
+            <textarea id="observacion" required placeholder="Ingresa una observación"></textarea>
+          </div>
+        </div>
+
+        <div class="form-buttons">
+          <button type="button" onclick="agregarRegistro()">AGREGAR REGISTRO</button>
+          <button type="button" onclick="culminarRegistro()">CULMINAR</button>
+          <button type="button" onclick="imprimirTabla()">IMPRIMIR</button>
+          <button type="button" onclick="exportarExcel()">ARCHIVO EXCEL</button>
+        </div>
+
+      </form>
+    </div>
+    <div class="table-container">
+      <h2 style="color:mediumblue">Registros Ingresados</h2>
+      <table id="tablaRegistros">
+        <thead>
+          <tr>
+            <th>Número</th>
+            <th>Área</th>
+            <th>Descripción</th>
+            <th>Proveedor</th>
+            <th>Responsable</th>
+            <th>Fecha de Vencimiento</th>
+            <th>Observación</th>
+            <th>Proceso</th>  
+            <th>Acciones</th> 
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+    <script src="daniel.js"></script>
+</body>
+</html>
